@@ -1,5 +1,11 @@
+import platform
+import sys
+
+
 def choose_direction(options):
-    if len(options) == 1:  # Not enough options
+    if platform.platform().split("-")[0] != "Windows":
+        sys.exit()
+    elif len(options) == 1:  # Not enough options
         raise ValueError("Need more parameters")
     else:
         files = []
